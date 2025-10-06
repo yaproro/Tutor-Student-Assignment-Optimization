@@ -184,10 +184,10 @@ for j in tutors:
 #Define objective
 #-----------------
 
-c1 = 10   #Penalty for not balancing workload
-c2 = 0    #Penalty for each tutor used 
-c3 = 4    #Penalty for not giving tutors any preferred location 
-c4 = 2    #Penalty for not giving tutors 1st preferred location 
+c1 = 0    #Penalty for not balancing workload
+c2 = 5    #Penalty for each tutor used 
+c3 = 3    #Penalty for not giving tutors any preferred location 
+c4 = 1    #Penalty for not giving tutors 1st preferred location 
 
 #Want to minimize total sum of yj which corresponds to the number of tutors assigned
 tutors_used = sum(y[j.tutorid] for j in tutors)  
@@ -248,4 +248,5 @@ if s:
     for i in new_students:
         for j in tutors:
             if s.get_value(x[i.studentid, j.tutorid]):  
+
                 print(f"Student {i.studentid} is assigned to Tutor {j.tutorid}.")
