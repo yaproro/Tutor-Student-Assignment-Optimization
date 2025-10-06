@@ -73,14 +73,14 @@ For detailed optimization model information that includes all variables, constra
  
 **Objective term weights**
 Depending on how the tutoring organization values each set of objectives, the weights can be modified to quantitatively reflect its importance. 
-On lines 187–190 of the python script or 5th last cell in the python notebook, the model defines four objective weight variables (`c1`, `c2`, `c3`, `c4`).  
+On lines 187–190 of the python script or 5th/11th last cell in the python notebook, the model defines four objective weight variables (`c1`, `c2`, `c3`, `c4`).  
 The higher the weights, the more important it is to achieve the following goals. 
 
 c1 - Importance of balancing all assigned tutor's workload  
 c2 - Importance of reducing number of tutors hired
 c3 - Importance of tutors having 1st or 2nd choice preferred location
 c4 - Importance of tutors having 1st choice preferred location 
-Generally c4 < c3. 
+Generally, c4 < c3. 
  
 ---
 
@@ -98,7 +98,7 @@ Generally c4 < c3.
 
 ## Expected Output
 
-When the data is successfully loaded from file, the script will print : Data loaded consist of X new students, Y active existing students and Z tutors.
+When the data is successfully loaded from file, the script will print : `Data loaded consist of X new students, Y active existing students and Z tutors.`
 If the solver successfully gets a solution, it will print variable values followed by a breakdown of the objective score.
 Lastly, we expect to see a list of students and their respective assigned tutors.   
 
@@ -106,17 +106,21 @@ Example :
 ```
 -------------------------------------------------------------
 Objective breakdown:
-Total penalty: 12.0
-Balancing workload : weight = 10, U = 5, L = 4. Total = 10
-Tutors used : weight = 0, tutors used = 7.0. Total = 0
-Not preferred location penalty : weight = 4, Total = 0
-Second choice location penalty : weight = 2, Total = 2
+Total penalty: 33.0
+Balancing workload : weight = 0, U = 8, L = 0. Total = 0
+Tutors used : weight = 5, tutors used = 6.0. Total = 30
+Not preferred location penalty : weight = 3, Total = 0
+Second choice location penalty : weight = 1, Total = 3
 -------------------------------------------------------------
 Solution:
-Student S0001 is assigned to Tutor A001
-Student S0002 is assigned to Tutor A003
-Student S0003 is assigned to Tutor A009
-Student S0004 is assigned to Tutor A001
-Student S0005 is assigned to Tutor A009
+Tutor A002 has 5 student(s) assigned.
+Tutor A003 has 5 student(s) assigned.
+Tutor A005 has 6 student(s) assigned.
+Tutor A007 has 8 student(s) assigned.
+Tutor A009 has 4 student(s) assigned.
+Tutor A010 has 4 student(s) assigned.
+Student S0001 is assigned to Tutor A002.
+Student S0002 is assigned to Tutor A010.
+Student S0003 is assigned to Tutor A005.
 ... 
 ```
